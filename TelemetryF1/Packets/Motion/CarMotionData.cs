@@ -1,7 +1,11 @@
-﻿namespace TelemetryF1.Packets.Motion
+﻿using System.Runtime.InteropServices;
+
+namespace TelemetryF1.Packets.Motion
 {
+    //[StructLayout(LayoutKind.Explicit, Pack = 0, Size = 60)]
     public struct CarMotionData
     {
+        //[]
         public float m_worldPositionX;           // World space X position
         public float m_worldPositionY;           // World space Y position
         public float m_worldPositionZ;           // World space Z position

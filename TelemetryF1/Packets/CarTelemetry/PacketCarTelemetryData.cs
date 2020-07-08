@@ -1,6 +1,8 @@
-﻿namespace TelemetryF1.Packets.CarTelemetry
+﻿using System;
+
+namespace TelemetryF1.Packets.CarTelemetry
 {
-    public struct PacketCarTelemetryData
+    public class PacketCarTelemetryData : Packet
     {
         public PacketHeader m_header;         // Header
 
@@ -17,5 +19,31 @@
         public byte m_mfdPanelIndexSecondaryPlayer;   // See above
         public sbyte m_suggestedGear;       // Suggested gear for the player (1-8)
         // 0 if no gear suggested
+
+        public PacketCarTelemetryData(byte[] bytes)
+        {
+            int byteStartPtr = 0;
+
+            byte[] bytesHeader = new byte[PacketHeader.SIZE];
+            Buffer.BlockCopy(bytes, byteStartPtr, bytesHeader, 0, PacketHeader.SIZE);
+            m_header = new PacketHeader(bytesHeader);
+            byteStartPtr = PacketHeader.SIZE;
+            m_carTelemetryData = new CarTelemetryData[20];
+
+            for (int i = 0; i < 20; i++)
+            {
+                byte[] bytesData = new byte[CarTelemetryData.SIZE];
+                Buffer.BlockCopy(bytes, byteStartPtr, bytesData, 0, CarTelemetryData.SIZE);
+                m_carTelemetryData[i] = new CarTelemetryData(bytesData);
+
+                byteStartPtr += CarTelemetryData.SIZE;
+            }
+
+            m_buttonStatus = BitConverter.ToUInt32(bytes, byteStartPtr);
+            byteStartPtr += 4;
+            m_mfdPanelIndex = bytes[byteStartPtr++];
+            m_mfdPanelIndexSecondaryPlayer = bytes[byteStartPtr++];
+            m_suggestedGear = (sbyte)BitConverter.ToChar(bytes, byteStartPtr);
+        }
     }
 }

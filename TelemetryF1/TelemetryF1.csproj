@@ -67,8 +67,9 @@
     <Compile Include="Packets\LobbyInfo\LobbyInfoData.cs" />
     <Compile Include="Packets\Motion\CarMotionData.cs" />
     <Compile Include="Packets\Motion\PacketMotionData.cs" />
+    <Compile Include="Packets\Packet.cs" />
     <Compile Include="Packets\PacketHeader.cs" />
-    <Compile Include="PacketManager.cs" />
+    <Compile Include="Packets\PacketType.cs" />
     <Compile Include="Packets\Participants\PacketParticipantsData.cs" />
     <Compile Include="Packets\Participants\ParticipantData.cs" />
     <Compile Include="Packets\Session\MarshalZone.cs" />
