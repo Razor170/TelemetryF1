@@ -4,7 +4,7 @@ namespace TelemetryF1.Packets.CarTelemetry
 {
     public class CarTelemetryData
     {
-        public static int SIZE = 66;
+        public const int SIZE = 66;
         public ushort m_speed;                         // Speed of car in kilometres per hour
         public float m_throttle;                      // Amount of throttle applied (0.0 to 1.0)
         public float m_steer;                         // Steering (-1.0 (full lock left) to 1.0 (full lock right))

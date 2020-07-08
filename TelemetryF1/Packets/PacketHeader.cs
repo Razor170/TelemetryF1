@@ -5,7 +5,7 @@ namespace TelemetryF1.Packets
 {
     public class PacketHeader
     {
-        public static int SIZE = 24;
+        public const int SIZE = 24;
         public ushort m_packetFormat; // 2020
         public byte m_gameMajorVersion; // Game major version - "X.00"
         public byte m_gameMinorVersion; // Game minor version - "1.XX"

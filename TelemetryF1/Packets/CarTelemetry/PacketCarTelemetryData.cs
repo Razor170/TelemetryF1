@@ -4,8 +4,6 @@ namespace TelemetryF1.Packets.CarTelemetry
 {
     public class PacketCarTelemetryData : Packet
     {
-        public PacketHeader m_header;         // Header
-
         public CarTelemetryData[] m_carTelemetryData;
 
         public uint m_buttonStatus;        // Bit flags specifying which buttons are being pressed
@@ -20,17 +18,13 @@ namespace TelemetryF1.Packets.CarTelemetry
         public sbyte m_suggestedGear;       // Suggested gear for the player (1-8)
         // 0 if no gear suggested
 
-        public PacketCarTelemetryData(byte[] bytes)
+        public PacketCarTelemetryData(byte[] bytes) : base(bytes)
         {
-            int byteStartPtr = 0;
+            int byteStartPtr = PacketHeader.SIZE;
 
-            byte[] bytesHeader = new byte[PacketHeader.SIZE];
-            Buffer.BlockCopy(bytes, byteStartPtr, bytesHeader, 0, PacketHeader.SIZE);
-            m_header = new PacketHeader(bytesHeader);
-            byteStartPtr = PacketHeader.SIZE;
-            m_carTelemetryData = new CarTelemetryData[20];
+            m_carTelemetryData = new CarTelemetryData[22];
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 22; i++)
             {
                 byte[] bytesData = new byte[CarTelemetryData.SIZE];
                 Buffer.BlockCopy(bytes, byteStartPtr, bytesData, 0, CarTelemetryData.SIZE);

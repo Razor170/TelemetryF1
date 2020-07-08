@@ -1,7 +1,10 @@
-﻿namespace TelemetryF1.Packets.CarStatus
+﻿using System;
+
+namespace TelemetryF1.Packets.CarStatus
 {
-    public struct CarStatusData
+    public class CarStatusData
     {
+        public const int SIZE = 60;
         public byte m_tractionControl;          // 0 (off) - 2 (high)
         public byte m_antiLockBrakes;           // 0 (off) - 1 (on)
         public byte m_fuelMix;                  // Fuel mix - 0 = lean, 1 = standard, 2 = rich, 3 = max
@@ -49,5 +52,52 @@
         public float m_ersHarvestedThisLapMGUK;  // ERS energy harvested this lap by MGU-K
         public float m_ersHarvestedThisLapMGUH;  // ERS energy harvested this lap by MGU-H
         public float m_ersDeployedThisLap;       // ERS energy deployed this lap
+
+        public CarStatusData(byte[] bytes)
+        {
+            m_tractionControl = bytes[0];
+            m_antiLockBrakes = bytes[1];
+            m_fuelMix = bytes[2];
+            m_frontBrakeBias = bytes[3];
+            m_pitLimiterStatus = bytes[4];
+
+            m_fuelInTank = BitConverter.ToSingle(bytes, 5);
+            m_fuelCapacity = BitConverter.ToSingle(bytes, 9);
+            m_fuelRemainingLaps = BitConverter.ToSingle(bytes, 13);
+
+            m_maxRPM = BitConverter.ToUInt16(bytes, 17);
+            m_idleRPM = BitConverter.ToUInt16(bytes, 19);
+
+            m_maxGears = bytes[21];
+            m_drsAllowed = bytes[22];
+
+            m_drsActivationDistance = BitConverter.ToUInt16(bytes, 23);
+
+            m_tyresWear = new byte[4];
+            Buffer.BlockCopy(bytes, 25, m_tyresWear, 0, 4);
+
+            m_actualTyreCompound = bytes[29];
+            m_visualTyreCompound = bytes[30];
+            m_tyresAgeLaps = bytes[31];
+
+            m_tyresDamage = new byte[4];
+            Buffer.BlockCopy(bytes, 32, m_tyresDamage, 0, 4);
+
+            m_frontLeftWingDamage = bytes[36];
+            m_frontRightWingDamage = bytes[37];
+            m_rearWingDamage = bytes[38];
+            m_drsFault = bytes[39];
+            m_engineDamage = bytes[40];
+            m_gearBoxDamage = bytes[41];
+
+            m_vehicleFiaFlags = (sbyte)BitConverter.ToChar(bytes, 42);
+            m_ersStoreEnergy = BitConverter.ToSingle(bytes, 43);
+
+            m_ersDeployMode = bytes[47];
+
+            m_ersHarvestedThisLapMGUK = BitConverter.ToSingle(bytes, 48);
+            m_ersHarvestedThisLapMGUH = BitConverter.ToSingle(bytes, 52);
+            m_ersDeployedThisLap = BitConverter.ToSingle(bytes, 56);
+        }
     }
 }
