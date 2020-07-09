@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelemetryF1", "TelemetryF1\TelemetryF1.csproj", "{6AD22DEB-3681-40B7-ADE0-2644933D6F40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelemetrySystem", "TelemetrySystem\TelemetrySystem.csproj", "{AF4E1AA5-E60C-4E13-ADD5-77C1ED418D08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPDPackets", "UPDPackets\UPDPackets.csproj", "{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6AD22DEB-3681-40B7-ADE0-2644933D6F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AD22DEB-3681-40B7-ADE0-2644933D6F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AD22DEB-3681-40B7-ADE0-2644933D6F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AD22DEB-3681-40B7-ADE0-2644933D6F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF4E1AA5-E60C-4E13-ADD5-77C1ED418D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4E1AA5-E60C-4E13-ADD5-77C1ED418D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4E1AA5-E60C-4E13-ADD5-77C1ED418D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4E1AA5-E60C-4E13-ADD5-77C1ED418D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
