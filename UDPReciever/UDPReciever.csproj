@@ -1,14 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PacketPropertys\Storage.csproj" />
-    <ProjectReference Include="..\UDPReciever\UDPReciever.csproj" />
     <ProjectReference Include="..\UPDPackets\UPDPackets.csproj" />
   </ItemGroup>
 

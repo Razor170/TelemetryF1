@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelemetrySystem", "Telemetr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPDPackets", "UPDPackets\UPDPackets.csproj", "{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPReciever", "UDPReciever\UDPReciever.csproj", "{CF408E4F-D414-4254-8F7D-188C65342116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage", "PacketPropertys\Storage.csproj", "{B2352CC7-41CB-4383-81C9-38CA4CFED2DF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F43B7574-6B93-40D1-A2F5-F94CEB259CA4} = {F43B7574-6B93-40D1-A2F5-F94CEB259CA4}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,14 @@ Global
 		{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F43B7574-6B93-40D1-A2F5-F94CEB259CA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF408E4F-D414-4254-8F7D-188C65342116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF408E4F-D414-4254-8F7D-188C65342116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF408E4F-D414-4254-8F7D-188C65342116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF408E4F-D414-4254-8F7D-188C65342116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2352CC7-41CB-4383-81C9-38CA4CFED2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2352CC7-41CB-4383-81C9-38CA4CFED2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2352CC7-41CB-4383-81C9-38CA4CFED2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2352CC7-41CB-4383-81C9-38CA4CFED2DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
